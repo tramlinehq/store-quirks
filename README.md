@@ -1,10 +1,9 @@
 # Store Gotchas
-
----
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/tramlinehq/macige/blob/master/LICENSE)
+[![discord](https://img.shields.io/discord/974284993641725962?style=plastic)](https://discord.gg/u7VwyvBV2Z)
 
 <aside>
 ☎️ This reference is written in an FAQ form
-
 </aside>
 
 ## Glossary
@@ -13,14 +12,6 @@
 | --- | --- | --- |
 | version code | Bundle Version String (aka. build string) | The version of the build that identifies an iteration of the bundle (https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) |
 | version string | - | this is usually just the version name, but can be different |
-
-## Help and contribution
-
-![https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb](https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb)
-
-If you are confused about how releases function on the App Store or Google Play Store, join our little discord and throw up a question and we’ll try our best to answer it! If you have a question or an answer to a question that you’d like to submit, let us know and we’ll publish your name here!
-
-All content is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
 ## App Store 📱
 
@@ -123,7 +114,7 @@ Yes. See [Q: Does the previous Ready For Sale in phased release automatically ha
 
 ### Q: What happens to the phased release when it is paused and the 30-day time has passed?
 
- dunno lol
+Uncertain.
 
 ### Q: Till what state can you remove from review/cancel the release?
 
@@ -153,3 +144,9 @@ From – [https://support.google.com/googleplay/android-developer/answer/6346149
 ```
 When you do a staged rollout of a new release before completing the rollout of the previous release, the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
 ```
+
+## Help and contribution
+
+![https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb](https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb)
+
+If you are confused about how releases function on the App Store or Google Play Store, join our little discord and throw up a question and we’ll try our best to answer it! If you have a question or an answer to a question that you’d like to submit, let us know and we’ll publish your name here!
