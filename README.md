@@ -1,0 +1,155 @@
+# Store Gotchas
+
+---
+
+<aside>
+☎️ This reference is written in an FAQ form
+
+</aside>
+
+## Glossary
+
+| version name | Bundle Short Version String | The release or version number of the bundle (https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring) |
+| --- | --- | --- |
+| version code | Bundle Version String (aka. build string) | The version of the build that identifies an iteration of the bundle (https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) |
+| version string | - | this is usually just the version name, but can be different |
+
+## Help and contribution
+
+![https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb](https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb)
+
+If you are confused about how releases function on the App Store or Google Play Store, join our little discord and throw up a question and we’ll try our best to answer it! If you have a question or an answer to a question that you’d like to submit, let us know and we’ll publish your name here!
+
+All content is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+## App Store 📱
+
+### Q: Can I swap a build on a running phased rollout in app store?
+
+You can’t do this. There is no UI for it on the App Store Connect dashboard.
+
+If you try to do this using the API, you get the following error:
+
+```
+A relationship value is not acceptable for the current resource state. - The specified pre-release build could not be added.
+```
+
+Also from – [https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit](https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit)
+
+```
+However, you can change the build as often as you want until you submit the version to App Review.
+```
+
+Also see [Q: Can you revert to an older version of the app if the current version (being phased) has a bug?](https://www.notion.so/Q-Can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug-79fc1ce540cd42aa80906ac06a6414d5) 
+
+The fact that you cannot do this **during a phased rollout** isn’t explicitly documented, but the clues above are enough evidence to suggest the impossibility of it.
+
+### Q: Can I swap a build after a release has been reviewed but has not been submitted for sale?
+
+This cannot be done. The build can only be swapped before submission for review. After which you have to explicitly cancel the release and make a new one to be able to change builds.
+
+![Screenshot 2023-02-24 at 10.40.14 PM.png](Store%20Gotchas%208aad60167c614fa883f9a7a188509f46/Screenshot_2023-02-24_at_10.40.14_PM.png)
+
+### Q: Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?
+
+When the Phased Release was paused: the older version moves to `REPLACED_WITH_NEW_VERSION` status with its phased release as `COMPLETE` after a new version is released.
+
+When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
+
+### Q: When can you create a new release for an app?
+
+You can only do this when the last release is in `READY_FOR SALE` (it has been released to at least some users, phased or full) or `DEVELOPER_REMOVED_FROM_SALE`.
+
+Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)
+
+### Q: What is `DEVELOPER_REMOVED_FROM_SALE` and how do you get to that state?
+
+This state is reached when you have completely removed your app from the store. You can do this by going to the "Pricing and Availability" section in the App Store Connect dashboard and setting the availability to "Not for Sale". Please refer to the screenshot below:
+
+![Screenshot 2023-02-22 at 12.28.19 PM.png](Store%20Gotchas%208aad60167c614fa883f9a7a188509f46/Screenshot_2023-02-22_at_12.28.19_PM.png)
+
+### Q: Can you revert to an older version of the app if the current version (being phased) has a bug?
+
+No, it is not possible to revert to a previous version on the App Store if you have an issue with your app. You must create and submit a new version.
+
+Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)
+
+### Q: Does creating a new build on TestFlight auto-create a new release in `READY_FOR_SUBMISSION` state on app store (production)?
+
+Yes. Elaborate more on this with evidence.
+
+### Q: If there's already a phased release and another pending release on app store, does pushing to TestFlight, update the build on pending release?
+
+No, it does not. It automatically changes the version string to represent the "latest" version (in some sort of dubious semver-type of way). This only changes the name, of course. The build remains the same and is **not** swapped.
+
+### Q: When using Apple's phased release of an app, which version is presented to users downloading for the 1st time?
+
+Phased rollout is only for automatic updates, new users will always download the latest build. Existing users can also go manually update the build from the app store.
+
+From ref – [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
+
+```
+Keep in mind that apps and app updates in phased release can be manually downloaded from the App Store by anyone at any time.
+```
+
+### Q: **How does the release of an update work during a phased release?**
+
+> Will version 2.0.1 be released only to the same 2% of the users that already received version 2.0? Or it will be delivered to a completely new 2% of my users?
+> 
+
+It will be delivered to a completely new random sample of 2% users, no correlation.
+
+### Q: Is there a way to halt a phased release?
+
+In a way, yes. A release can be paused any number of times during a phased rollout, but the halt is permanent and that version is removed from the store
+
+Ref - [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
+
+```
+While your app is in phased release, you can choose to pause the release for a total of 30 days. There’s no limit to the number of pauses. If you remove your app from sale, phased release will stop and won’t be available for that version again.
+```
+
+You can make that version available again by flipping the switch. It can take some time to become available again. See [Q: What is `DEVELOPER_REMOVED_FROM_SALE` and how do you get to that state?](https://www.notion.so/Q-What-is-DEVELOPER_REMOVED_FROM_SALE-and-how-do-you-get-to-that-state-d7bf6bac8e314dbc836ab5efb9c79ba7)
+
+### Q: Can you start a new release (start its distribution) while another release is in a phased release?
+
+Yes. See [Q: Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?](https://www.notion.so/Q-Does-the-previous-Ready-For-Sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-a-20889192526f410e894f88776f582730) 
+
+When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
+
+### Q: Can you start a new release (start its distribution) while another release is in phased release, but paused?
+
+Yes. See [Q: Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?](https://www.notion.so/Q-Does-the-previous-Ready-For-Sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-a-20889192526f410e894f88776f582730) 
+
+### Q: What happens to the phased release when it is paused and the 30-day time has passed?
+
+ dunno lol
+
+### Q: Till what state can you remove from review/cancel the release?
+
+Apparently, you can remove it from review even after the build is `In Review`. After approvals and before a Developer Release, you can cancel the release.
+
+![Screenshot 2023-02-28 at 12.54.16 AM.png](Store%20Gotchas%208aad60167c614fa883f9a7a188509f46/Screenshot_2023-02-28_at_12.54.16_AM.png)
+
+![Screenshot 2023-02-28 at 12.56.38 AM.png](Store%20Gotchas%208aad60167c614fa883f9a7a188509f46/Screenshot_2023-02-28_at_12.56.38_AM.png)
+
+## Google Play Store 🤖
+
+### Q: Can I swap a build on a running staged rollout?
+
+Kinda? Yes?
+
+### Q: When using staged rolling out, which version is presented to users downloading for the 1st time?
+
+New users are also randomly selected.
+
+### Q: **How does the release of an update work during a staged rollout?**
+
+> Will version 2.0.1 be released only to the same 2% of the users that already received version 2.0? Or it will be delivered to a completely new 2% of my users?
+> 
+
+From – [https://support.google.com/googleplay/android-developer/answer/6346149?hl=en](https://support.google.com/googleplay/android-developer/answer/6346149?hl=en)
+
+```
+When you do a staged rollout of a new release before completing the rollout of the previous release, the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
+```
