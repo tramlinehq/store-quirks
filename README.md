@@ -1,10 +1,8 @@
-# Store Gotchas
+# A Collection of Mobile App Store Quirks
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/tramlinehq/macige/blob/master/LICENSE)
 [![discord](https://img.shields.io/discord/974284993641725962?style=plastic)](https://discord.gg/u7VwyvBV2Z)
 
-<aside>
-☎️ This reference is written in an FAQ form
-</aside>
+This reference is compiled from experience, apple developer forums, stack-overflow and various developer documentation.
 
 ## Glossary
 
