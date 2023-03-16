@@ -4,11 +4,11 @@
 
 ## About
 
-In our experience developing Tramline, we have encountered challenges in the process of releasing and managing updates for our app on different app stores. One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
+As mobile developers, we have encountered unique challenges in the process of releasing and managing updates for our app on different app stores. One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
 
-Additionally, the interfaces and tools provided by these app stores for managing releases are often opaque and again don't care for telling you exactly how things function behind the scenes, which further complicates the process. 
+Additionally, the interfaces and tools provided by these stores for managing releases are often opaque and don't care for telling you exactly how things function behind the scenes, which further complicates the process. 
 
-This reference is a compilation from experience, developer forums, Stack Overflow and various other developer documentation. It is by no means complete. We welcome improvements, new edge-cases and other things to look out for related to quirks around releasing across stores.
+This reference is a compilation of QnAs for common or rare situations in an attempt to increase transparency. It is compiled from experience, developer forums, Stack Overflow and various other developer documentation and hopefully, new contributions.
 
 ## Glossary
 
