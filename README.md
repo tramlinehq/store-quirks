@@ -36,7 +36,7 @@ However, you can change the build as often as you want until
 you submit the version to App Review.
 ```
 
-[Also see]["Q: Can you revert to an older version of the app if the current version (being phased) has a bug?"]
+[Also see](#q-can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug).
 
 The fact that you cannot do this **during a phased rollout** isn’t explicitly documented, but the clues above are enough evidence to suggest the impossibility of it.
 
