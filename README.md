@@ -140,11 +140,11 @@ One can remove it from review even after the build is `In Review`. After approva
 
 ### Q: Can I swap a build for an active staged rollout?
 
-Kinda? Yes?
+What Play Store does here is that it appears to immediately set the current release to be in a `Not Live` state and the new one is sort-of auto-promoted to whatever release state it was in previously.
 
 ### Q: During a staged rollout, what version is presented to users downloading for the 1st time?
 
-New users are also randomly selected.
+New users also participate in the randomization off of the release % bucket.
 
 ### Q: **How does the release of a version update work during a staged rollout?**
 
@@ -158,7 +158,7 @@ of the previous release, the new release will use the same group of users
 as the previous release (depending on the percentage of the rollout).
 ```
 
-In play store, depending on the percentage rollout the user group is sticky with respect to the previous release.
+In play store, depending on the percentage rollout the user group is sticky with respect to the selection from the previous release.
 
 ## Help and contribution
 
