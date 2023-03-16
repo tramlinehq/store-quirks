@@ -109,17 +109,17 @@ If you remove your app from sale, phased release will stop
 and won’t be available for that version again.
 ```
 
-You can make that version available again by flipping the switch. It can take some time to become available again. [See][Q: What is `DEVELOPER_REMOVED_FROM_SALE` and how do you get to that state?].
+You can make that version available again by flipping the switch. It can take some time to become available again. [See](#q-what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state).
 
 ### Q: Can you start a new release (start its distribution) while another release is in a phased release?
 
-Yes. [See][Q: Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?].
+Yes. [See](#q-does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
 
 When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
 
 ### Q: Can you start a new release (start its distribution) while another release is in phased release, but paused?
 
-Yes. [See][Q: Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?]. 
+Yes. [See](#q-does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
 
 ### How long can you shepherd a phased release?
 
