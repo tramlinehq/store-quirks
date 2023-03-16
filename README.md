@@ -109,7 +109,7 @@ You can make that version available again by flipping the switch. It can take so
 
 ### Q: Can you start a new release (start its distribution) while another release is in a phased release?
 
-Yes. See [Q: Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?](https://www.notion.so/Q-Does-the-previous-Ready-For-Sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-a-20889192526f410e894f88776f582730) 
+Yes. [See](qdoes-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval?).
 
 When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
 
