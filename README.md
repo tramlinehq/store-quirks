@@ -154,6 +154,6 @@ the new release will use the same group of users as the previous release (depend
 
 ## Help and contribution
 
-<img src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb" width="25%" alt="help" />
+<img src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb" width="20%" alt="help" />
 
-If you are confused about how releases function on the App Store or Google Play Store, join our little discord and throw up a question and we’ll try our best to answer it! If you have a question or an answer to a question that you’d like to submit, let us know and we’ll publish your name here!
+If you have a question or an answer to a question that you’d like to submit, drop in an [issue](https://github.com/tramlinehq/store-quirks/issues)! Feel free to swing by the [discord](https://discord.gg/u7VwyvBV2Z) if you'd like to discuss.
