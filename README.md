@@ -7,7 +7,7 @@ Additionally, the interfaces and tools provided by these stores for managing rel
 
 This reference is a compilation of QnAs for common or rare situations in an attempt to increase transparency. It is compiled from experience, developer forums, Stack Overflow and various other developer documentation and hopefully, new contributions.
 
-**Note:** A few of these may seem obvious, but they may exist to draw a contract between stores.
+**Note:** A few of these could seem obvious, but they may exist to draw a contrast between stores.
 
 ## Glossary
 
