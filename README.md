@@ -2,7 +2,13 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/tramlinehq/macige/blob/master/LICENSE)
 [![discord](https://img.shields.io/discord/974284993641725962?style=plastic)](https://discord.gg/u7VwyvBV2Z)
 
-This reference is compiled from experience, apple developer forums, stack-overflow and various developer documentation.
+## About
+
+In our experience developing Tramline, we have encountered challenges in the process of releasing and managing updates for our app on different app stores. One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
+
+Additionally, the interfaces and tools provided by these app stores for managing releases are often opaque and again don't care for telling you exactly how things function behind the scenes, which further complicates the process. 
+
+This reference is a compilation from experience, developer forums, Stack Overflow and various other developer documentation. It is by no means complete. We welcome improvements, new edge-cases and other things to look out for related to quirks around releasing across stores.
 
 ## Glossary
 
@@ -95,7 +101,9 @@ In a way, yes. A release can be paused any number of times during a phased rollo
 Ref - [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
 
 ```
-While your app is in phased release, you can choose to pause the release for a total of 30 days. There’s no limit to the number of pauses. If you remove your app from sale, phased release will stop and won’t be available for that version again.
+While your app is in phased release, you can choose to pause the release for a total of 30 days. 
+There’s no limit to the number of pauses. 
+If you remove your app from sale, phased release will stop and won’t be available for that version again.
 ```
 
 You can make that version available again by flipping the switch. It can take some time to become available again. See [Q: What is `DEVELOPER_REMOVED_FROM_SALE` and how do you get to that state?](https://www.notion.so/Q-What-is-DEVELOPER_REMOVED_FROM_SALE-and-how-do-you-get-to-that-state-d7bf6bac8e314dbc836ab5efb9c79ba7)
@@ -140,11 +148,12 @@ New users are also randomly selected.
 From – [https://support.google.com/googleplay/android-developer/answer/6346149?hl=en](https://support.google.com/googleplay/android-developer/answer/6346149?hl=en)
 
 ```
-When you do a staged rollout of a new release before completing the rollout of the previous release, the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
+When you do a staged rollout of a new release before completing the rollout of the previous release, 
+the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
 ```
 
 ## Help and contribution
 
-![https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb](https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb)
+<img src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb" width="25%" alt="help" />
 
 If you are confused about how releases function on the App Store or Google Play Store, join our little discord and throw up a question and we’ll try our best to answer it! If you have a question or an answer to a question that you’d like to submit, let us know and we’ll publish your name here!
