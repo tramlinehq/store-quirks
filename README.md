@@ -1,6 +1,5 @@
 # A Collection of Mobile App Store Quirks
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/tramlinehq/macige/blob/master/LICENSE)
-[![discord](https://img.shields.io/discord/974284993641725962?style=plastic)](https://discord.gg/u7VwyvBV2Z)
+[![License](https://img.shields.io/github/license/tramlinehq/store-quirks)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE)
 
 As mobile developers, we face unique challenges when it comes to releasing and managing updates for our apps across different app stores One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
 
