@@ -2,8 +2,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/tramlinehq/macige/blob/master/LICENSE)
 [![discord](https://img.shields.io/discord/974284993641725962?style=plastic)](https://discord.gg/u7VwyvBV2Z)
 
-## About
-
 As mobile developers, we face unique challenges when it comes to releasing and managing updates for our apps across different app stores One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
 
 Additionally, the interfaces and tools provided by these stores for managing releases are often opaque and  and don't offer much insight into how things work behind the scenes, which further complicates the process. 
@@ -12,10 +10,11 @@ This reference is a compilation of QnAs for common or rare situations in an atte
 
 ## Glossary
 
-| version name | Bundle Short Version String | The release or version number of the bundle (https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring) |
-| --- | --- | --- |
-| version code | Bundle Version String (aka. build string) | The version of the build that identifies an iteration of the bundle (https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) |
-| version string | - | this is usually just the version name, but can be different |
+| | App Store | Play Store |
+|-|-----------|------------|
+| Version Name | [Bundle Short Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring). The release or version number of the bundle. |  |
+| Version Code | [Bundle Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) (aka. build string). The version of the build that identifies an iteration of the bundle. | |
+| Version String | - | this is usually just the version name, but can be different |
 
 ## App Store 📱
 
@@ -35,7 +34,7 @@ Also from – [https://developer.apple.com/help/app-store-connect/manage-builds/
 However, you can change the build as often as you want until you submit the version to App Review.
 ```
 
-Also see [Q: Can you revert to an older version of the app if the current version (being phased) has a bug?](https://www.notion.so/Q-Can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug-79fc1ce540cd42aa80906ac06a6414d5) 
+[Also see][#Q: Can you revert to an older version of the app if the current version (being phased) has a bug?]
 
 The fact that you cannot do this **during a phased rollout** isn’t explicitly documented, but the clues above are enough evidence to suggest the impossibility of it.
 
@@ -142,8 +141,7 @@ New users are also randomly selected.
 
 ### Q: **How does the release of an update work during a staged rollout?**
 
-> Will version 2.0.1 be released only to the same 2% of the users that already received version 2.0? Or it will be delivered to a completely new 2% of my users?
-> 
+For example, will version 2.0.1 be released only to the same 2% of the users that already received version 2.0.0? Or it will be delivered to a completely new 2% of my users?
 
 From – [https://support.google.com/googleplay/android-developer/answer/6346149?hl=en](https://support.google.com/googleplay/android-developer/answer/6346149?hl=en)
 
@@ -151,6 +149,8 @@ From – [https://support.google.com/googleplay/android-developer/answer/6346149
 When you do a staged rollout of a new release before completing the rollout of the previous release, 
 the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
 ```
+
+In play store, depending on the percentage rollout the user group is sticky with respect to the previous release.
 
 ## Help and contribution
 
