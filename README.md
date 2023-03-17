@@ -15,11 +15,13 @@ Additionally, the interfaces and tools provided by these stores for managing rel
 
 ## Glossary
 
+The words use might mean slightly different things on different stores, so this table tries to clarify what a particular word means.
+
 | | App Store | Play Store |
 |-|-----------|------------|
-| Version Name | [Bundle Short Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring). The release or version number of the bundle. |  |
-| Version Code | [Bundle Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) (aka. build string). The version of the build that identifies an iteration of the bundle. | |
-| Version String | - | this is usually just the version name, but can be different |
+| Version Name | [Bundle Short Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring). The release or version number of the bundle. String on the right: <br/> ![Screenshot 2023-03-17 at 7 45 01 PM](https://user-images.githubusercontent.com/50663/225929999-30a37e10-9c3b-449c-9887-8dec16227f27.png) | [This](https://developer.android.com/studio/publish/versioning#versioningsettings) is `versionName`. Unlike App Store, it needn't necessarily be a "semver-style" string, it can be anything. |
+| Version Code | [Bundle Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) (aka. build string). The version of the build that identifies an iteration of the bundle. This number is the one generally incremented through a CI pipeline. Note that this technically needn't be an integer, it just needs to be incremented every time. Number on the left: <br/> ![Screenshot 2023-03-17 at 7 45 01 PM](https://user-images.githubusercontent.com/50663/225929999-30a37e10-9c3b-449c-9887-8dec16227f27.png) | [This](https://developer.android.com/studio/publish/versioning#versioningsettings) is `versionCode`. Unlike App Store, it is not a string, it is a pure integer that must be incremented for every new build. |
+| Release Version | This is typically the Version Name (but it can be different). In the APIs, you'd find this under [PreReleaseVersion](https://developer.apple.com/documentation/appstoreconnectapi/prereleaseversion/attributes) and/or [App Store Version](https://developer.apple.com/documentation/appstoreconnectapi/appstoreversion/attributes). This is what is shown to the users on the store page. | This is typically the Version Name, but can be different. This is what is shown to the users on the store page. |
 
 ## App Store 📱
 
