@@ -25,34 +25,6 @@ This is a quick definition check for commonly used words across stores so that w
 
 ## [App Store](https://appstoreconnect.apple.com) 📱
 
-### Can I swap a build on a running phased rollout?
-
-You can’t do this. There is no UI for it on the App Store Connect dashboard.
-
-If you try to do this using the API, you get the following error:
-
-```
-A relationship value is not acceptable for the current resource state.
-The specified pre-release build could not be added.
-```
-
-Also from [https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit](https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit):
-
-```
-However, you can change the build as often as you want until
-you submit the version to App Review.
-```
-
-Also see: [Can you revert to an older version of the app if the current version (being phased) has a bug?](#can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug)
-
-The fact that you cannot do this **during a phased rollout** isn’t explicitly documented, but the clues above are enough evidence to suggest the impossibility of it.
-
-### Can I swap a build after a release has been reviewed but has not been submitted for sale?
-
-This cannot be done. The build can only be swapped before submission for review. After which you have to explicitly cancel the release and make a new one to be able to change builds.
-
-![cancel release](img/cancel_release.png)
-
 ### Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted for distribution after approval?
 
 When the Phased Release was paused: the older version moves to `REPLACED_WITH_NEW_VERSION` status with its phased release as `COMPLETE` after a new version is released.
@@ -79,7 +51,7 @@ Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/crea
 
 ### Does creating a new build on TestFlight auto-create a new release in `READY_FOR_SUBMISSION` state on app store (production)?
 
-Yes. App Store only keeps two things active at a time. The one `inflight` and another in `deliverable`. If there's nothing in `inflight`, the next build shipped to TestFlight automatically becomes a potential next release on App Store under inflight. One peculiar behaviour here is that subsequent builds to TestFlight do not swap the build from this inflight release, but they do change the Release Version name as per the latest build.
+Yes. App Store only keeps two things active at a time. The one `inflight` and another in `deliverable`. If there's nothing in inflight, the next build shipped to TestFlight automatically becomes a potential next release on App Store under inflight. One peculiar behaviour here is that subsequent builds to TestFlight do not swap the build from this inflight release, but they do change the Release Version name as per the latest build.
 
 ### If there's already a phased release and another pending release on app store, does pushing to TestFlight, update the build on pending release?
 
@@ -144,6 +116,35 @@ One can remove it from review even after the build is `In Review`. After approva
 
 ![remove from review](img/remove_from_review.png)
 ![cancel before release](img/cancel_before_release.png)
+
+### Can I swap a build on a running phased rollout?
+
+You can’t do this. There is no UI for it on the App Store Connect dashboard.
+
+If you try to do this using the API, you get the following error:
+
+```
+A relationship value is not acceptable for the current resource state.
+The specified pre-release build could not be added.
+```
+
+Also from [https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit](https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit):
+
+```
+However, you can change the build as often as you want until
+you submit the version to App Review.
+```
+
+Also see: [Can you revert to an older version of the app if the current version (being phased) has a bug?](#can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug)
+
+The fact that you cannot do this **during a phased rollout** isn’t explicitly documented, but the clues above are enough evidence to suggest the impossibility of it.
+
+### Can I swap a build after a release has been reviewed but has not been submitted for sale?
+
+This cannot be done. The build can only be swapped before submission for review. After which you have to explicitly cancel the release and make a new one to be able to change builds.
+
+![cancel release](img/cancel_release.png)
+
 
 ## [Google Play Store](https://play.google.com/console/u/0/developers) 🤖
 
