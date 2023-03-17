@@ -53,11 +53,11 @@ This cannot be done. The build can only be swapped before submission for review.
 
 ![cancel release](img/cancel_release.png)
 
-### Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted to distribute after approval?
+### Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted for distribution after approval?
 
 When the Phased Release was paused: the older version moves to `REPLACED_WITH_NEW_VERSION` status with its phased release as `COMPLETE` after a new version is released.
 
-When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
+When the Phased Release was active: same as above.
 
 ### When can you create a new release for an app?
 
@@ -79,7 +79,7 @@ Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/crea
 
 ### Does creating a new build on TestFlight auto-create a new release in `READY_FOR_SUBMISSION` state on app store (production)?
 
-Yes. Elaborate more on this with evidence.
+Yes. App Store only keeps two things active at a time. The one `inflight` and another in `deliverable`. If there's nothing in `inflight`, the next build shipped to TestFlight automatically becomes a potential next release on App Store under `inflight`. One peculiar behaviour here is that subsequent builds to TestFlight do not swap the build from this `inflight` release, but they do change the Release Version name as per the latest build.
 
 ### If there's already a phased release and another pending release on app store, does pushing to TestFlight, update the build on pending release?
 
