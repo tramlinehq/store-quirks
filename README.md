@@ -67,7 +67,7 @@ Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/crea
 
 ### What is `DEVELOPER_REMOVED_FROM_SALE` and how do you get to that state?
 
-This state is reached when you have completely removed your app from the store. You can do this by going to the "Pricing and Availability" section in the App Store Connect dashboard and setting the availability to "Not for Sale". Please refer to the screenshot below:
+This state is reached when you have completely removed your app from the store. You can do this by going to the "Pricing and Availability" section in the App Store Connect dashboard and setting the availability to "Remove from sale". This will remove the app from app store for all regions. Please refer to the screenshot below:
 
 ![remove from sale](img/remove_from_sale.png)
 
@@ -79,7 +79,7 @@ Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/crea
 
 ### Does creating a new build on TestFlight auto-create a new release in `READY_FOR_SUBMISSION` state on app store (production)?
 
-Yes. App Store only keeps two things active at a time. The one `inflight` and another in `deliverable`. If there's nothing in `inflight`, the next build shipped to TestFlight automatically becomes a potential next release on App Store under `inflight`. One peculiar behaviour here is that subsequent builds to TestFlight do not swap the build from this `inflight` release, but they do change the Release Version name as per the latest build.
+Yes. App Store only keeps two things active at a time. The one `inflight` and another in `deliverable`. If there's nothing in `inflight`, the next build shipped to TestFlight automatically becomes a potential next release on App Store under inflight. One peculiar behaviour here is that subsequent builds to TestFlight do not swap the build from this inflight release, but they do change the Release Version name as per the latest build.
 
 ### If there's already a phased release and another pending release on app store, does pushing to TestFlight, update the build on pending release?
 
