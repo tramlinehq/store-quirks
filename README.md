@@ -92,11 +92,11 @@ You can make that version available again by flipping the switch. It can take so
 
 ### Can you start a new release (start its distribution) while another release is in a phased release?
 
-Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
+Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-for-distribution-after-approval).
 
 ### Can you start a new release (start its distribution) while another release is in phased release, but paused?
 
-Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
+Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-for-distribution-after-approval).
 
 ### How long can you shepherd a phased release?
 
