@@ -15,7 +15,7 @@ Additionally, the interfaces and tools provided by these stores for managing rel
 
 ## Glossary
 
-The words use might mean slightly different things on different stores, so this table tries to clarify what a particular word means.
+To ensure we're not using the words loosely, here's a quick definition check for commonly used words across stores:
 
 | | App Store | Play Store |
 |-|-----------|------------|
