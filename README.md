@@ -11,7 +11,7 @@ This reference is a compilation of answers for common and rare situations in an 
 
 As mobile developers, we face unique challenges when it comes to releasing and managing updates for our apps across different app stores. One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
 
-Additionally, the interfaces and tools provided by these stores for managing releases are often opaque and and don't offer much insight into how things work behind the scenes, which further complicates the process. 
+Additionally, the interfaces and tools provided by these stores for managing releases are often opaque and and don't offer much insight into how things work behind the scenes, which further complicates the process.
 
 ## Glossary
 
@@ -30,18 +30,18 @@ You can’t do this. There is no UI for it on the App Store Connect dashboard.
 If you try to do this using the API, you get the following error:
 
 ```
-A relationship value is not acceptable for the current resource state. 
+A relationship value is not acceptable for the current resource state.
 The specified pre-release build could not be added.
 ```
 
 Also from [https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit](https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit):
 
 ```
-However, you can change the build as often as you want until 
+However, you can change the build as often as you want until
 you submit the version to App Review.
 ```
 
-Also see: [Can you revert to an older version of the app if the current version (being phased) has a bug?](#q-can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug)
+Also see: [Can you revert to an older version of the app if the current version (being phased) has a bug?](#can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug)
 
 The fact that you cannot do this **during a phased rollout** isn’t explicitly documented, but the clues above are enough evidence to suggest the impossibility of it.
 
@@ -90,7 +90,7 @@ Phased rollout is only for automatic updates, new users will always download the
 From ref – [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
 
 ```
-Keep in mind that apps and app updates in phased release can be manually 
+Keep in mind that apps and app updates in phased release can be manually
 downloaded from the App Store by anyone at any time.
 ```
 
@@ -107,24 +107,24 @@ In a way, yes. A release can be paused any number of times during a phased rollo
 Ref - [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
 
 ```
-While your app is in phased release, you can choose to pause the release for a total of 30 days. 
-There’s no limit to the number of pauses. 
+While your app is in phased release, you can choose to pause the release for a total of 30 days.
+There’s no limit to the number of pauses.
 
-If you remove your app from sale, phased release will stop 
+If you remove your app from sale, phased release will stop
 and won’t be available for that version again.
 ```
 
-You can make that version available again by flipping the switch. It can take some time to become available again. [See](#q-what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state).
+You can make that version available again by flipping the switch. It can take some time to become available again. [See](#what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state).
 
 ### Can you start a new release (start its distribution) while another release is in a phased release?
 
-Yes. [See](#q-does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
+Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
 
 When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
 
 ### Can you start a new release (start its distribution) while another release is in phased release, but paused?
 
-Yes. [See](#q-does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
+Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
 
 ### How long can you shepherd a phased release?
 
@@ -158,8 +158,8 @@ For example, will version 2.0.1 be released only to the same 2% of the users tha
 From – [https://support.google.com/googleplay/android-developer/answer/6346149?hl=en](https://support.google.com/googleplay/android-developer/answer/6346149?hl=en)
 
 ```
-When you do a staged rollout of a new release before completing the rollout 
-of the previous release, the new release will use the same group of users 
+When you do a staged rollout of a new release before completing the rollout
+of the previous release, the new release will use the same group of users
 as the previous release (depending on the percentage of the rollout).
 ```
 
