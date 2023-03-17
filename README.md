@@ -128,7 +128,11 @@ Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-hal
 
 ### How long can you shepherd a phased release?
 
-30 days.
+Build is removed after 30 days.
+
+### How long are non-production builds retained for (in TestFlight)?
+
+They expire after 90 days.
 
 ### What happens to the phased release when it is paused and the 30-day time has passed?
 
@@ -164,6 +168,14 @@ as the previous release (depending on the percentage of the rollout).
 ```
 
 In play store, depending on the percentage rollout the user group is sticky with respect to the selection from the previous release.
+
+### How long can you shepherd a staged rollout?
+
+Indefinitely.
+
+### How long are non-production builds retained for (in App Bundle Explorer)?
+
+Forever.
 
 ## Help and contribution
 
