@@ -122,8 +122,6 @@ You can make that version available again by flipping the switch. It can take so
 
 Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
 
-When the Phased Release was active: our assumption is same as above. but TO BE CONFIRMED.
-
 ### Can you start a new release (start its distribution) while another release is in phased release, but paused?
 
 Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-to-distribute-after-approval).
