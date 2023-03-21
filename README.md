@@ -55,7 +55,7 @@ Yes. App Store only keeps two things active at a time. The one `inflight` and an
 
 ### If there's already a phased release and another pending release on app store, does pushing to TestFlight, update the build on pending release?
 
-No, it does not. It automatically changes the version string to represent the "latest" version (in some sort of dubious semver-type of way). This only changes the name, of course. The build remains the same and is **not** swapped.
+No, it does not. However, if one is using **fastlane**, it may automatically change the version string to represent the "latest" version. This only changes the name, of course. The build remains the same and is **not** swapped. You can set `skip_app_version_update` to `true` to avoid this behaviour.
 
 ### During a phased release, what version is presented to users downloading for the 1st time?
 
