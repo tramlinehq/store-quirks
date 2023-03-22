@@ -1,5 +1,8 @@
 # A Collection of Mobile App Store Quirks
-[![License](https://img.shields.io/github/license/tramlinehq/store-quirks)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE)
+
+[![License](https://img.shields.io/github/license/tramlinehq/store-quirks?color=%23DD6540)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE) 
+[![Discord](https://img.shields.io/discord/974284993641725962?label=discord%20chat)](https://discord.gg/u7VwyvBV2Z)
+
 
 # What is this?
 
