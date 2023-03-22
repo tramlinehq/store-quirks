@@ -14,6 +14,8 @@ This reference is a compilation of answers for common and rare situations in an 
 
 > **Note:** A few of these might seem obvious, but they exist to draw a contrast between the stores.
 
+### Jump to: [App Store](#apple-app-store) • [Play Store](#google-play-store)
+
 # Glossary
 
 This is a quick definition check for commonly used words across stores so that we don't end up using them loosely or interchangeably:
