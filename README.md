@@ -1,17 +1,15 @@
 # A Collection of Mobile App Store Quirks
 [![License](https://img.shields.io/github/license/tramlinehq/store-quirks)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE)
 
-# What?
-
-This reference is a compilation of answers for common and rare situations in an attempt to increase transparency. It is compiled from experience, developer forums, Stack Overflow, and various other sources of developer documentation. We hope contributions from other developers will grow this resource further.
-
-> **Note:** A few of these might seem obvious, but they exist to draw a contrast between the stores.
-
-# Why?
+# What is this?
 
 As mobile developers, we face unique challenges when it comes to releasing and managing updates for our apps across different app stores. One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
 
 Additionally, the interfaces and tools provided by these stores for managing releases are often opaque and and don't offer much insight into how things work behind the scenes, which further complicates the process.
+
+This reference is a compilation of answers for common and rare situations in an attempt to increase transparency. It is compiled from experience, developer forums, Stack Overflow, and various other sources of developer documentation. We hope contributions from other developers will grow this resource further.
+
+> **Note:** A few of these might seem obvious, but they exist to draw a contrast between the stores.
 
 # Glossary
 
@@ -23,9 +21,11 @@ This is a quick definition check for commonly used words across stores so that w
 | Version Code | [Bundle Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) (a.k.a. build string). The version of the build that identifies an iteration of the bundle. This number is the one generally incremented through a CI pipeline. Note that this technically needn't be an integer, it just needs to be incremented every time. Number on the left: <br/> ![](img/vcode.png) | [This](https://developer.android.com/studio/publish/versioning#versioningsettings) is `versionCode`. Unlike App Store, it is not a string, it is a pure integer that must be incremented for every new build. |
 | Release Version | This is typically the Version Name (but it can be different). In the APIs, you'd find this under [PreReleaseVersion](https://developer.apple.com/documentation/appstoreconnectapi/prereleaseversion/attributes) and/or [App Store Version](https://developer.apple.com/documentation/appstoreconnectapi/appstoreversion/attributes). This is what is shown to the users on the store page. | This is typically the Version Name, but can be different. This is only for internal use and isn't shown to users anywhere. |
 
+---
+
 # Apple App Store
 
-## [Fastlane](https://fastlane.tools)
+### [Fastlane](https://fastlane.tools)
 
 When `skip_app_version_update` is set to `false` (default) in Fastlane, the two following things can happen:
 
@@ -33,8 +33,6 @@ When `skip_app_version_update` is set to `false` (default) in Fastlane, the two 
 * If there's already an `inflight` release, a new build on TestFlight will **not** auto-update the build under the `inflight` release, but, it will change the release version name to the new one.
 
 Set the flag to `true` to disable the above.
-
----
 
 ### Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted for distribution after approval?
 
@@ -137,6 +135,7 @@ This cannot be done. The build can only be updated before submission for review,
 
 ![cancel release](img/cancel_release.png)
 
+---
 
 # Google Play Store
 
