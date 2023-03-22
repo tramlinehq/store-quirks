@@ -144,15 +144,15 @@ This cannot be done. The build can only be updated before submission for review,
 
 # Google Play Store
 
-### Can I update a build on a running staged rollout?
+## Can I update a build on a running staged rollout?
 
 Play Store allows you to create a new release on the Production track while another is being rolled out. It immediately sets the current release to be in a `Not Live` state when the new one is promoted to be the live release.
 
-### During a staged rollout, what version is presented to users downloading for the first time?
+## During a staged rollout, what version is presented to users downloading for the first time?
 
 New users also participate in the randomization off of the release % bucket.
 
-### How does the release of a version update work during a staged rollout?
+## How does the release of a version update work during a staged rollout?
 
 For example, will version 2.0.1 be released only to the same 2% of the users that already received version 2.0.0? Or it will be delivered to a completely new 2% of my users?
 
@@ -162,11 +162,11 @@ From https://support.google.com/googleplay/android-developer/answer/6346149?hl=e
 
 In the Play Store, depending on the percentage rollout, the user group is sticky with respect to the selection from the previous release.
 
-### How long can you shepherd a staged rollout?
+## How long can you shepherd a staged rollout?
 
 Indefinitely.
 
-### How long are non-production builds retained for in the App Bundle Explorer?
+## How long are non-production builds retained for in the App Bundle Explorer?
 
 Indefinitely.
 
