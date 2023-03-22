@@ -25,11 +25,11 @@ This is a quick definition check for commonly used words across stores so that w
 
 ## [App Store](https://appstoreconnect.apple.com) 📱
 
-## Fastlane
+## [Fastlane](https://fastlane.tools)
 
-When `skip_app_version_update` is set to `false` (default) in fastlane, the two following things can happen:
+When `skip_app_version_update` is set to `false` (default) in Fastlane, the two following things can happen:
 
-* Creating a new build on TestFlight auto-creates a new release in `READY_FOR_SUBMISSION` on app store (production).
+* Creating a new build on TestFlight auto-creates a new release in `READY_FOR_SUBMISSION` on App Store (production).
 * If there's already an `inflight` release, a new build on TestFlight will **not** auto-update the build under the `inflight` release, but, it will change the release version name to the new one.
 
 Set the flag to `true` to disable the above.
@@ -46,11 +46,11 @@ If the phased release was active – _same as above_.
 
 You can only do this when the last release is in `READY_FOR SALE` (it has been released to at least some users, phased or full) or `DEVELOPER_REMOVED_FROM_SALE`.
 
-Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)
+Ref: [https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)
 
 ### What is `DEVELOPER_REMOVED_FROM_SALE` and how do you get to that state?
 
-This state is reached when you have completely removed your app from the store. You can do this by going to the "Pricing and Availability" section in the App Store Connect dashboard and setting the availability to "Remove from sale". This will remove the app from app store for all regions. Please refer to the screenshot below:
+This state is reached when you have completely removed your app from the store. You can do this by going to the "Pricing and Availability" section in the App Store Connect dashboard and setting the availability to "Remove from sale". This will remove the app from App Store for all regions. Please refer to the screenshot below:
 
 ![remove from sale](img/remove_from_sale.png)
 
@@ -58,18 +58,15 @@ This state is reached when you have completely removed your app from the store. 
 
 No, it is not possible to revert to a previous version on the App Store if you have an issue with your app. You must create and submit a new version.
 
-Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)
+Ref: https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version
 
-### During a phased release, what version is presented to users downloading for the 1st time?
+### During a phased release, what version is presented to users downloading for the first time?
 
-Phased rollout is only for automatic updates, new users will always download the latest build. Existing users can also go manually update the build from the app store.
+Phased rollout is only for automatic updates, new users will always download the latest build. Existing users can also go and manually update the build from the App Store.
 
-From ref – [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
+From https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases:
 
-```
-Keep in mind that apps and app updates in phased release can be manually
-downloaded from the App Store by anyone at any time.
-```
+> Keep in mind that apps and app updates in phased release can be manually downloaded from the App Store by anyone at any time.
 
 ### How does the release of a version update work during a phased release?
 
@@ -79,17 +76,14 @@ It will be delivered to a completely new random sample of 2% users, no correlati
 
 ### Is there a way to halt a phased release?
 
-In a way, yes. A release can be paused any number of times during a phased rollout, but the halt is immediate and that version is removed from the store right away. Halt will not be able to do anything about the users who already got the update.
+In a way, yes. A release can be paused any number of times during a phased rollout, but the halt is immediate and that version is removed from the store right away. Halt will not be able to do anything about the users who already received the update.
 
-Ref - [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
+From https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases:
 
-```
-While your app is in phased release, you can choose to pause the release for a total of 30 days.
-There’s no limit to the number of pauses.
-
-If you remove your app from sale, phased release will stop
-and won’t be available for that version again.
-```
+> While your app is in phased release, you can choose to pause the release for a total of 30 days.
+> There’s no limit to the number of pauses.
+> 
+> If you remove your app from sale, phased release will stop and won’t be available for that version again.
 
 You can make that version available again by flipping the switch. It can take some time to become available again. [See](#what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state).
 
@@ -103,26 +97,26 @@ Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-hal
 
 ### How long can you shepherd a phased release?
 
-Build is removed after 30 days.
+Upto 30 days, after which the build is removed. 
 
-### How long are non-production builds retained for (in TestFlight)?
+### How long are non-production builds retained for in TestFlight?
 
 They expire after 90 days.
 
-### What happens to the phased release when it is paused and the 30-day time has passed?
+### What happens to the phased release when it is paused and the 30 day time limit has passed?
 
 Currently uncertain.
 
-### Until what state can you remove from review/cancel the release?
+### Until what state can you remove a release from review, or cancel it?
 
-One can remove it from review even after the build is `In Review`. After approvals and before a Developer Release, you can cancel the release.
+You can remove a release from review even after the build is `In Review`. You can cancel a release after approvals and before a Developer Release.
 
 ![remove from review](img/remove_from_review.png)
 ![cancel before release](img/cancel_before_release.png)
 
 ### Can I update a build on a running phased rollout?
 
-You can’t do this. There is no UI for it on the App Store Connect dashboard.
+You can’t do this because here is no UI for it on the App Store Connect dashboard.
 
 If you try to do this using the API, you get the following error:
 
@@ -131,20 +125,21 @@ A relationship value is not acceptable for the current resource state.
 The specified pre-release build could not be added.
 ```
 
-Also from [https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit](https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit):
+Also from https://developer.apple.com/help/app-store-connect/manage-builds/choose-a-build-to-submit:
 
-```
-However, you can change the build as often as you want until
-you submit the version to App Review.
-```
+> However, you can change the build as often as you want until you submit the version to App Review.
 
 Also see: [Can you revert to an older version of the app if the current version (being phased) has a bug?](#can-you-revert-to-an-older-version-of-the-app-if-the-current-version-being-phased-has-a-bug)
 
 ### Can I update a build after a release has been reviewed but has not been released to users (not in `READY_FOR_SALE`)?
 
-This cannot be done. The build can only be updated before submission for review. After which you have to explicitly cancel the release and make a new one to be able to change builds.
+This cannot be done. The build can only be updated before submission for review, after which you have to explicitly cancel the release and make a new one to be able to change builds.
 
 ![cancel release](img/cancel_release.png)
+
+
+
+
 
 ## [Google Play Store](https://play.google.com/console/u/0/developers) 🤖
 
