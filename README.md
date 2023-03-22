@@ -1,19 +1,19 @@
 # A Collection of Mobile App Store Quirks
 [![License](https://img.shields.io/github/license/tramlinehq/store-quirks)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE)
 
-## What?
+# What?
 
 This reference is a compilation of answers for common and rare situations in an attempt to increase transparency. It is compiled from experience, developer forums, Stack Overflow, and various other sources of developer documentation. We hope contributions from other developers will grow this resource further.
 
 > **Note:** A few of these might seem obvious, but they exist to draw a contrast between the stores.
 
-## Why?
+# Why?
 
 As mobile developers, we face unique challenges when it comes to releasing and managing updates for our apps across different app stores. One of the primary reasons for this difficulty is the scattered and insufficient documentation available, which lacks the necessary level of detail and nuance to provide a clear understanding of the process.
 
 Additionally, the interfaces and tools provided by these stores for managing releases are often opaque and and don't offer much insight into how things work behind the scenes, which further complicates the process.
 
-## Glossary
+# Glossary
 
 This is a quick definition check for commonly used words across stores so that we don't end up using them loosely or interchangeably:
 
@@ -23,7 +23,7 @@ This is a quick definition check for commonly used words across stores so that w
 | Version Code | [Bundle Version String](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion) (a.k.a. build string). The version of the build that identifies an iteration of the bundle. This number is the one generally incremented through a CI pipeline. Note that this technically needn't be an integer, it just needs to be incremented every time. Number on the left: <br/> ![](img/vcode.png) | [This](https://developer.android.com/studio/publish/versioning#versioningsettings) is `versionCode`. Unlike App Store, it is not a string, it is a pure integer that must be incremented for every new build. |
 | Release Version | This is typically the Version Name (but it can be different). In the APIs, you'd find this under [PreReleaseVersion](https://developer.apple.com/documentation/appstoreconnectapi/prereleaseversion/attributes) and/or [App Store Version](https://developer.apple.com/documentation/appstoreconnectapi/appstoreversion/attributes). This is what is shown to the users on the store page. | This is typically the Version Name, but can be different. This is only for internal use and isn't shown to users anywhere. |
 
-## [App Store](https://appstoreconnect.apple.com) 📱
+# Apple App Store
 
 ## [Fastlane](https://fastlane.tools)
 
@@ -138,16 +138,13 @@ This cannot be done. The build can only be updated before submission for review,
 ![cancel release](img/cancel_release.png)
 
 
-
-
-
-## [Google Play Store](https://play.google.com/console/u/0/developers) 🤖
+# Google Play Store
 
 ### Can I update a build on a running staged rollout?
 
-Play Store allows you to create a new release on the Production track while another is being rolled out. It immediately sets the current release to be in a `Not Live` state when the new one is promoted to be the live.
+Play Store allows you to create a new release on the Production track while another is being rolled out. It immediately sets the current release to be in a `Not Live` state when the new one is promoted to be the live release.
 
-### During a staged rollout, what version is presented to users downloading for the 1st time?
+### During a staged rollout, what version is presented to users downloading for the first time?
 
 New users also participate in the randomization off of the release % bucket.
 
@@ -155,26 +152,20 @@ New users also participate in the randomization off of the release % bucket.
 
 For example, will version 2.0.1 be released only to the same 2% of the users that already received version 2.0.0? Or it will be delivered to a completely new 2% of my users?
 
-From – [https://support.google.com/googleplay/android-developer/answer/6346149?hl=en](https://support.google.com/googleplay/android-developer/answer/6346149?hl=en)
+From https://support.google.com/googleplay/android-developer/answer/6346149?hl=en:
 
-```
-When you do a staged rollout of a new release before completing the rollout
-of the previous release, the new release will use the same group of users
-as the previous release (depending on the percentage of the rollout).
-```
+> When you do a staged rollout of a new release before completing the rollout of the previous release, the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
 
-In play store, depending on the percentage rollout the user group is sticky with respect to the selection from the previous release.
+In the Play Store, depending on the percentage rollout, the user group is sticky with respect to the selection from the previous release.
 
 ### How long can you shepherd a staged rollout?
 
 Indefinitely.
 
-### How long are non-production builds retained for (in App Bundle Explorer)?
+### How long are non-production builds retained for in the App Bundle Explorer?
 
-Forever.
+Indefinitely.
 
-## Help and contribution
+# Help and contribution
 
-<img src="https://images.unsplash.com/photo-1531379410502-63bfe8cdaf6f?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb" width="20%" alt="help" />
-
-If you have a correction, a question or an answer to a question that you’d like to submit, drop in an [issue](https://github.com/tramlinehq/store-quirks/issues)! Feel free to swing by the [discord](https://discord.gg/u7VwyvBV2Z) if you'd like to discuss.
+If you have a correction, a question, or an answer to a question that you’d like to submit, please [create an issue](https://github.com/tramlinehq/store-quirks/issues)! Feel free to drop in to our [Discord community](https://discord.gg/u7VwyvBV2Z) if you'd like to chat.
