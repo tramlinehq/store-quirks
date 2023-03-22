@@ -85,15 +85,15 @@ From https://developer.apple.com/help/app-store-connect/update-your-app/release-
 > 
 > If you remove your app from sale, phased release will stop and won’t be available for that version again.
 
-You can make that version available again by flipping the switch. It can take some time to become available again. [See](#what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state).
+You can make that version available again by flipping the switch. It can take some time to become available again. See [What is DEVELOPER_REMOVED_FROM_SALE and how do you get to that state?](#what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state)
 
 ### Can you start a new release (start its distribution) while another release is in a phased release?
 
-Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-for-distribution-after-approval).
+Yes. See [Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted for distribution after approval?](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-for-distribution-after-approval)
 
 ### Can you start a new release (start its distribution) while another release is in phased release, but paused?
 
-Yes. [See](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-for-distribution-after-approval).
+Yes. See [Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted for distribution after approval?](#does-the-previous-ready-for-sale-in-phased-release-automatically-halt-or-stop-when-a-new-one-is-attempted-for-distribution-after-approval)
 
 ### How long can you shepherd a phased release?
 
