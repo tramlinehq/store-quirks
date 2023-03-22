@@ -25,11 +25,22 @@ This is a quick definition check for commonly used words across stores so that w
 
 ## [App Store](https://appstoreconnect.apple.com) 📱
 
+## Fastlane
+
+When `skip_app_version_update` is set to `false` (default) in fastlane, the two following things can happen:
+
+* Creating a new build on TestFlight auto-creates a new release in `READY_FOR_SUBMISSION` on app store (production).
+* If there's already an `inflight` release, a new build on TestFlight will **not** auto-update the build under the `inflight` release, but, it will change the release version name to the new one.
+
+Set the flag to `true` to disable the above.
+
+---
+
 ### Does the previous Ready For Sale in phased release automatically halt or stop when a new one is attempted for distribution after approval?
 
-When the Phased Release was paused: the older version moves to `REPLACED_WITH_NEW_VERSION` status with its phased release as `COMPLETE` after a new version is released.
+If the phased release was paused – the older version moves to `REPLACED_WITH_NEW_VERSION` status with its phased release as `COMPLETE` after a new version is released.
 
-When the Phased Release was active: same as above.
+If the phased release was active – _same as above_.
 
 ### When can you create a new release for an app?
 
@@ -48,15 +59,6 @@ This state is reached when you have completely removed your app from the store. 
 No, it is not possible to revert to a previous version on the App Store if you have an issue with your app. You must create and submit a new version.
 
 Ref – [https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version](https://developer.apple.com/help/app-store-connect/update-your-app/create-a-new-version)
-
-## Fastlane
-
-When `skip_app_version_update` is set to `false` in fastlane, the two following things can happen:
-
-* Creating a new build on TestFlight auto-creates a new release in `READY_FOR_SUBMISSION` on app store (production).
-* If there's already an `inflight` release, a new build on TestFlight will not auto-update the build under the `inflight` release.
-
-Set the flag to `true` to disable the above two behaviour
 
 ### During a phased release, what version is presented to users downloading for the 1st time?
 
@@ -77,7 +79,7 @@ It will be delivered to a completely new random sample of 2% users, no correlati
 
 ### Is there a way to halt a phased release?
 
-In a way, yes. A release can be paused any number of times during a phased rollout, but the halt is permanent and that version is removed from the store
+In a way, yes. A release can be paused any number of times during a phased rollout, but the halt is immediate and that version is removed from the store right away. Halt will not be able to do anything about the users who already got the update.
 
 Ref - [https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases](https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases)
 
