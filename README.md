@@ -119,7 +119,7 @@ You can remove a release from review even after the build is `In Review`. You ca
 
 ## Can I update a build on a running phased rollout?
 
-You can’t do this because here is no UI for it on the App Store Connect dashboard.
+You can’t do this because there is no UI for it on the App Store Connect dashboard.
 
 If you try to do this using the API, you get the following error:
 
