@@ -75,7 +75,7 @@ From https://developer.apple.com/help/app-store-connect/update-your-app/release-
 
 _For example, will version 2.1.0 be released to the same 10% of the users that already received version 2.0.0? Or will it be delivered to a completely new set of 10% of my users?_
 
-It will be delivered to a completely new random sample of 2% users, no correlation.
+It will be delivered to a completely new random sample of 10% users, no correlation.
 
 ## Is there a way to halt a phased release?
 
