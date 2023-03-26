@@ -73,7 +73,7 @@ From https://developer.apple.com/help/app-store-connect/update-your-app/release-
 
 ## How does the release of a version update work during a phased release?
 
-For example, will version 2.0.1 be released only to the same 2% of the users that already received version 2.0.0? Or it will be delivered to a completely new 2% of my users?
+_For example, will version 2.1.0 be released to the same 10% of the users that already received version 2.0.0? Or will it be delivered to a completely new set of 10% of my users?_
 
 It will be delivered to a completely new random sample of 2% users, no correlation.
 
@@ -154,7 +154,8 @@ New users also participate in the randomization off of the release % bucket.
 
 ## How does the release of a version update work during a staged rollout?
 
-For example, will version 2.0.1 be released only to the same 2% of the users that already received version 2.0.0? Or it will be delivered to a completely new 2% of my users?
+_For example, will version 2.1.0 be released to the same 10% of the users that already received version 2.0.0? Or will it be delivered to a completely new set of 10% of my users?_
+
 
 From https://support.google.com/googleplay/android-developer/answer/6346149?hl=en:
 
