@@ -16,21 +16,7 @@ This reference is a compilation of answers for common and rare situations in an 
 
 ### Jump to: [App Store](#apple-app-store) • [Play Store](#google-play-store)
 
----
-
-### Newly added quirks
-
-#### Version Code Uniquness
-
-[App Store](#-should-the-version-code-be-unique-for-every-build-on-testflight) • [Play Store](#-should-the-version-code-be-unique-for-every-build-on-app-bundle-explorer)
-
-#### Version Code Increments
-
-[App Store](#-should-the-version-code-always-be-higher-than-the-last-one-released) • [Play Store](#-should-the-version-code-for-a-track-always-be-higher-than-the-last-one)
-
-#### Version Name Increments
-
-[App Store](#-should-the-version-name-always-be-higher-than-the-last-one-released) • [Play Store](#-should-the-version-name-always-be-higher-than-the-last-one-released-1)
+### Newly added quirks: [App Store](#-should-the-version-name-always-be-higher-than-the-last-one-released) • [Play Store](#-should-the-version-name-always-be-higher-than-the-last-one-released-1)
 
 # Glossary
 
