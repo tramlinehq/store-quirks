@@ -140,6 +140,44 @@ This cannot be done. The build can only be updated before submission for review,
 
 ![cancel release](img/cancel_release.png)
 
+## 🆕 Should the Version Code be unique for every build on TestFlight?
+
+This is partly true. A more general rule of thumb for this is the following:
+
+The version code **and** version name combination must be unique. In other words, you **can** have same version codes (build numbers) across different version names.
+
+For example,
+
+**Version 1.0.0**
+* Build 90
+* Build 100
+
+**Version 1.0.1**
+* Build 90
+* Build 100
+* Build 101
+
+The above is a valid scenario.
+
+## 🆕 Should the Version Code always be higher than the last one released?
+
+This is not the case. The version code **can** be lower than the last version code deployed on App Store as long as the version name is an incremented value from the previous one.
+
+For example,
+
+Current App Store release: 1.0.0 (100)
+Valid new release: 1.0.1 (99)
+Valid new release: 1.0.1 (100)
+Valid new release: 1.0.1 (101)
+Invalid new release: 1.0.0 (99)
+Invalid new release: 0.0.1 (101)
+
+In the last two invalid cases, a new build upload to TestFlight will fail.
+
+## 🆕 Should the Version Name always be higher than the last one released?
+
+Yes. See explanation [here]().
+
 ---
 
 # Google Play Store
@@ -156,7 +194,6 @@ New users also participate in the randomization off of the release % bucket.
 
 _For example, will version 2.1.0 be released to the same 10% of the users that already received version 2.0.0? Or will it be delivered to a completely new set of 10% of my users?_
 
-
 From https://support.google.com/googleplay/android-developer/answer/6346149?hl=en:
 
 > When you do a staged rollout of a new release before completing the rollout of the previous release, the new release will use the same group of users as the previous release (depending on the percentage of the rollout).
@@ -170,6 +207,20 @@ Indefinitely.
 ## How long are non-production builds retained for in the App Bundle Explorer?
 
 Indefinitely.
+
+## 🆕 Should the Version Code be unique for every build on App Bundle Explorer?
+
+Yes. The upload will fail if this is not true.
+
+## 🆕 Should the Version Code for a track always be higher than the last one?
+
+Yes. The release to track would fail with the following error:
+
+<img width="789" alt="Screenshot 2023-05-22 at 10 08 02 PM" src="https://github.com/tramlinehq/store-quirks/assets/50663/2941a5b1-9189-45b5-bdc3-462ed136d708">
+
+## 🆕 Should the Version Name always be higher than the last one released?
+
+Since Play Store treats version names as any raw strings, there is no such constraint.
 
 # Help and contribution
 
