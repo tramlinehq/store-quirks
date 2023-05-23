@@ -180,6 +180,12 @@ In the last two invalid cases, a new build upload to TestFlight will fail.
 
 Yes. See explanation [here](https://github.com/tramlinehq/store-quirks#-should-the-version-code-always-be-higher-than-the-last-one-released).
 
+## 🆕 Can I cancel an app store submission and update the inflight release right after via the API?
+
+Yes. But, in our tests, it's notable that cancelling an app store submission through the API (or developer rejecting it) can actually take a few seconds to register on the Apple side. It may not be internally transactional, hence requires waiting to see that update.
+
+We see that when using the App Store Connect API, if you cancel an existing submission and try and update the details of the now editable app store version right away, it fails. Our guess is this is because the cancel submission API responds without persisting the change and requires a little gap before you can try and update the details of the newly editable app store version.
+
 ---
 
 # Google Play Store
