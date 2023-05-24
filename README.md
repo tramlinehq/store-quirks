@@ -16,7 +16,7 @@ This reference is a compilation of answers for common and rare situations in an 
 
 ### Jump to: [App Store](#apple-app-store) • [Play Store](#google-play-store)
 
-### Newly added quirks: [App Store](#-should-the-version-code-be-unique-for-every-build-on-testflight) • [Play Store](#-should-the-version-name-always-be-higher-than-the-last-one-released-1)
+### Newly added quirks: [App Store](#-should-the-version-code-be-unique-for-every-build-on-testflight) • [Play Store](#-should-the-version-code-be-unique-for-every-build-on-app-bundle-explorer)
 
 # Glossary
 
@@ -167,12 +167,12 @@ This is not the case. The version code **can** be lower than the last version co
 
 For example,
 
-Current App Store release: 1.0.0 (100)
-Valid new release: 1.0.1 (99)
-Valid new release: 1.0.1 (100)
-Valid new release: 1.0.1 (101)
-Invalid new release: 1.0.0 (99)
-Invalid new release: 0.0.1 (101)
+Current App Store release: 1.0.0 (100)  
+Valid new release: 1.0.1 (99)  
+Valid new release: 1.0.1 (100)  
+Valid new release: 1.0.1 (101)  
+Invalid new release: 1.0.0 (99)  
+Invalid new release: 0.0.1 (101)  
 
 In the last two invalid cases, a new build upload to TestFlight will fail.
 
