@@ -218,7 +218,7 @@ Indefinitely.
 
 ## 🆕 Should the Version Code be unique for every build on App Bundle Explorer?
 
-Yes. The upload will fail if this is not true.
+Yes. In addition, new version code should be higher than **any** version codes in App Bundle Explorer, i.e across all release tracks. The upload will fail otherwise. This is because android compares version codes (along with package name) to determine whether an app **update** is possible or not.
 
 ## 🆕 Should the Version Code for a track always be higher than the last one?
 
