@@ -142,7 +142,7 @@ This cannot be done. The build can only be updated before submission for review,
 
 ![cancel release](img/cancel_release.png)
 
-## 🆕 Should the Version Code be unique for every build on TestFlight?
+## Should the Version Code be unique for every build on TestFlight?
 
 This is partly true. A more general rule of thumb for this is the following:
 
@@ -161,7 +161,7 @@ For example,
 
 The above is a valid scenario.
 
-## 🆕 Should the Version Code always be higher than the last one released?
+## Should the Version Code always be higher than the last one released?
 
 This is not the case. The version code **can** be lower than the last version code deployed on App Store as long as the version name is an incremented value from the previous one.
 
@@ -176,15 +176,23 @@ Invalid new release: 0.0.1 (101)
 
 In the last two invalid cases, a new build upload to TestFlight will fail.
 
-## 🆕 Should the Version Name always be higher than the last one released?
+## Should the Version Name always be higher than the last one released?
 
 Yes. See explanation [here](https://github.com/tramlinehq/store-quirks#-should-the-version-code-always-be-higher-than-the-last-one-released).
 
-## 🆕 Can I cancel an app store submission and update the inflight release right after via the API?
+## Can I cancel an app store submission and update the inflight release right after via the API?
 
 Yes. But, in our tests, it's notable that cancelling an app store submission through the API (or developer rejecting it) can actually take a few seconds to register on the Apple side. It may not be internally transactional, hence requires waiting to see that update.
 
 We see that when using the App Store Connect API, if you cancel an existing submission and try and update the details of the now editable app store version right away, it fails. Our guess is this is because the cancel submission API responds without persisting the change and requires a little gap before you can try and update the details of the newly editable app store version.
+
+## 🆕 Can I start reviewing and preparing a new release while an existing one is rolling out?
+
+Yes. This is recommended so that you waste less time overall.
+
+## 🆕 Can I start a rollout of a newly prepared release when an existing one is rolling out?
+
+Yes. Starting a new release will simply cancel the existing rollout without additional confirmations.
 
 ---
 
