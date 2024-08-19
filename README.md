@@ -16,7 +16,7 @@ This reference is a compilation of answers for common and rare situations in an 
 
 ### Jump to: [App Store](#apple-app-store) • [Play Store](#google-play-store)
 
-### Newly added quirks: [App Store](#-should-the-version-code-be-unique-for-every-build-on-testflight) • [Play Store](#-should-the-version-code-be-unique-for-every-build-on-app-bundle-explorer)
+### Newly added quirks: [App Store](#-can-i-start-reviewing-and-preparing-a-new-release-while-an-existing-one-is-rolling-out) • [Play Store](#-should-the-version-code-be-unique-for-every-build-on-app-bundle-explorer)
 
 # Glossary
 
