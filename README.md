@@ -1,6 +1,6 @@
 # A Collection of Mobile App Store Quirks
 
-[![License](https://img.shields.io/github/license/tramlinehq/store-quirks?color=%23DD6540)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE) 
+[![License](https://img.shields.io/github/license/tramlinehq/store-quirks?color=%23DD6540)](https://github.com/tramlinehq/store-quirks/blob/master/LICENSE)
 [![Discord](https://img.shields.io/discord/974284993641725962?label=discord%20chat)](https://discord.gg/u7VwyvBV2Z)
 
 
@@ -15,8 +15,6 @@ This reference is a compilation of answers for common and rare situations in an 
 > **Note:** A few of these might seem obvious, but they exist to draw a contrast between the stores.
 
 ### Jump to: [App Store](#apple-app-store) • [Play Store](#google-play-store)
-
-### Newly added quirks: [App Store](#-can-i-start-reviewing-and-preparing-a-new-release-while-an-existing-one-is-rolling-out) • [Play Store](#-should-the-version-code-be-unique-for-every-build-on-app-bundle-explorer)
 
 # Glossary
 
@@ -87,7 +85,7 @@ From https://developer.apple.com/help/app-store-connect/update-your-app/release-
 
 > While your app is in phased release, you can choose to pause the release for a total of 30 days.
 > There’s no limit to the number of pauses.
-> 
+>
 > If you remove your app from sale, phased release will stop and won’t be available for that version again.
 
 You can make that version available again by flipping the switch. It can take some time to become available again. See [What is DEVELOPER_REMOVED_FROM_SALE and how do you get to that state?](#what-is-developer_removed_from_sale-and-how-do-you-get-to-that-state)
@@ -102,7 +100,7 @@ Yes. See [Does the previous Ready For Sale in phased release automatically halt 
 
 ## How long can you shepherd a phased release?
 
-Upto 30 days, after which the build is removed. 
+Upto 30 days, after which the build is removed.
 
 ## How long are non-production builds retained for in TestFlight?
 
@@ -167,12 +165,12 @@ This is not the case. The version code **can** be lower than the last version co
 
 For example,
 
-Current App Store release: 1.0.0 (100)  
-Valid new release: 1.0.1 (99)  
-Valid new release: 1.0.1 (100)  
-Valid new release: 1.0.1 (101)  
-Invalid new release: 1.0.0 (99)  
-Invalid new release: 0.0.1 (101)  
+Current App Store release: 1.0.0 (100)
+Valid new release: 1.0.1 (99)
+Valid new release: 1.0.1 (100)
+Valid new release: 1.0.1 (101)
+Invalid new release: 1.0.0 (99)
+Invalid new release: 0.0.1 (101)
 
 In the last two invalid cases, a new build upload to TestFlight will fail.
 
@@ -186,13 +184,45 @@ Yes. But, in our tests, it's notable that cancelling an app store submission thr
 
 We see that when using the App Store Connect API, if you cancel an existing submission and try and update the details of the now editable app store version right away, it fails. Our guess is this is because the cancel submission API responds without persisting the change and requires a little gap before you can try and update the details of the newly editable app store version.
 
-## 🆕 Can I start reviewing and preparing a new release while an existing one is rolling out?
+## Can I start reviewing and preparing a new release while an existing one is rolling out?
 
 Yes. This is recommended so that you waste less time overall.
 
-## 🆕 Can I start a rollout of a newly prepared release when an existing one is rolling out?
+## Can I start a rollout of a newly prepared release when an existing one is rolling out?
 
 Yes. Starting a new release will simply cancel the existing rollout without additional confirmations.
+
+## Is only SemVer supported for app versions?
+
+Even though the `CFBundleShortVersionString` and `CFBundleVersion` clearly specify:
+
+```
+This key is a machine-readable string composed of one to three period-separated integers, such as 10.14.1.
+The string can only contain numeric characters (0-9) and periods.
+
+Each integer provides information about the build version in the format [Major].[Minor].[Patch]:
+
+- Major: A major revision number.
+- Minor: A minor revision number.
+- Patch: A maintenance release number.
+```
+
+However,
+
+1. Zero-padded numbers are in fact allowed, which means `10.14.01` is valid. This does not strictly adhere to SemVer as per the spec.
+2. `X.Y.Z.N` is not allowed, since three is the maximum period-separated integers that are valid.
+
+Additionally,
+
+The above is not true for the "Version" field when updating the app details on App Store Connect. This appears to accept some more nuances, like,
+
+- `X.Y.Z.N`
+- `X.Y.Z.N-suffix`
+
+This has been tested, reviewed with a legitimate app on the store.
+
+![version field in asc](img/version_in_asc.png)
+![ueno version history](img/ueno_version_history.png)
 
 ---
 
@@ -224,17 +254,17 @@ Indefinitely.
 
 Indefinitely.
 
-## 🆕 Should the Version Code be unique for every build on App Bundle Explorer?
+## Should the Version Code be unique for every build on App Bundle Explorer?
 
 Yes. In addition, new version code should be higher than **any** version codes in App Bundle Explorer, i.e across all release tracks. The upload will fail otherwise. This is because android compares version codes (along with package name) to determine whether an app **update** is possible or not.
 
-## 🆕 Should the Version Code for a track always be higher than the last one?
+## Should the Version Code for a track always be higher than the last one?
 
 Yes. The release to track would fail with the following error:
 
 <img width="789" alt="Screenshot 2023-05-22 at 10 08 02 PM" src="https://github.com/tramlinehq/store-quirks/assets/50663/2941a5b1-9189-45b5-bdc3-462ed136d708">
 
-## 🆕 Should the Version Name always be higher than the last one released?
+## Should the Version Name always be higher than the last one released?
 
 Since Play Store treats version names as any raw strings, there is no such constraint.
 
