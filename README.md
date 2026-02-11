@@ -176,7 +176,13 @@ In the last two invalid cases, a new build upload to TestFlight will fail.
 
 ## Should the Version Name always be higher than the last one released?
 
-Yes. See explanation [here](https://github.com/tramlinehq/store-quirks#-should-the-version-code-always-be-higher-than-the-last-one-released).
+Yes. See explanation [here](#should-the-version-code-be-unique-for-every-build-on-testflight).
+
+Note that with TestFlight, even though the combination of a version name and version code must be unique (as mentioned in the link above), when submitting to production, the version name must be higher in value than the previously approved one, you might see an error like this, if that's not the case.:
+
+```
+The value for key CFBundleShortVersionString [5.10.0] in the Info.plist file must contain a higher version than that of the previously approved version [5.11.0].
+```
 
 ## Can I cancel an app store submission and update the inflight release right after via the API?
 
