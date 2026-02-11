@@ -14,6 +14,10 @@ This reference is a compilation of answers for common and rare situations in an 
 
 > **Note:** A few of these might seem obvious, but they exist to draw a contrast between the stores.
 
+## Note on LLMs
+
+As of Jan 2026, LLMs continue to hallucinate (or give up) answers for many of these questions because much of this is officially undocumented. All the FAQs here are independently verified by actual people.
+
 ### Jump to: [App Store](#apple-app-store) • [Play Store](#google-play-store)
 
 # Glossary
