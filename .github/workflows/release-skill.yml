@@ -1,0 +1,41 @@
+name: Release Skill
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "store-quirks/**"
+      - "README.md"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Package skill
+        run: |
+          cp README.md store-quirks/README.md
+          cd store-quirks
+          zip -r ../store-quirks.skill . -x '.*'
+
+      - name: Get short SHA
+        id: sha
+        run: echo "short=$(git rev-parse --short HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Delete existing 'latest' release
+        run: gh release delete latest --yes --cleanup-tag || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release
+        run: |
+          gh release create latest store-quirks.skill \
+            --title "store-quirks (${{ steps.sha.outputs.short }})" \
+            --notes "Built from ${{ github.sha }}" \
+            --latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
